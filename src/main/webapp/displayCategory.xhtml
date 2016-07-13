@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Welcome Page</title>
+</h:head>
+<h:body>
+	<h2>List of Categories</h2>
+	<h:form>
+	<h:dataTable value="#{category.validateDisplayCategory}"
+		var="displayCat">
+		<h:column>
+			<f:facet name="header">S.N</f:facet>
+      #{displayCat.cid}
+   </h:column>
+		<h:column>
+			<f:facet name="header">Name</f:facet>    				
+      #{displayCat.cname}
+   </h:column>
+		<h:column>
+			<f:facet name="header">Edit</f:facet>
+			<h:commandButton action="#{category.validateEditCategory(displayCat.cid)}"
+				value="Edit"></h:commandButton>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Delete</f:facet>
+			<h:commandButton action="#{category.validateDeleteCategory(displayCat.cid)}"
+				value="Delete"></h:commandButton>
+			
+		</h:column>
+	</h:dataTable>
+	</h:form>
+	<br />
+	<br />
+</h:body>
+</html>

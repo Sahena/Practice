@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<title>Edit Category Page</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h3>Edit Category</h3>
+		<h:outputText value="Category Name" />
+		<h:inputText name="cname" value="#{category.categoryModel.cname}">	
+		
+		</h:inputText>
+		<br></br>
+		<br></br>
+
+		<h:commandButton action="#{category.validateUpdateCategory(category.categoryModel.cid)}"
+			value="Submit"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

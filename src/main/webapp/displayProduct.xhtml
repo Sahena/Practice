@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Product Display</title>
+</h:head>
+<h:body>
+	<h2>List of Products</h2>
+	<h:form>
+	<h:dataTable value="#{product.validateDisplayProduct}"
+		var="displayProd">
+		<h:column>
+			<f:facet name="header">S.N</f:facet>
+      #{displayProd.pid}
+   </h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>    				
+      #{displayProd.pname}
+   </h:column>
+   <h:column>
+				<f:facet name="header">Price</f:facet>    				
+      #{displayProd.price}
+   </h:column>
+   <h:column>
+				<f:facet name="header">Quantity</f:facet>    				
+      #{displayProd.quantity}
+   </h:column>
+   <h:column>
+				<f:facet name="header">Category</f:facet>    				
+      #{displayProd.categoryModel.cname}
+   </h:column>
+			<h:column>
+			<f:facet name="header">Edit</f:facet>
+			<h:commandButton action="#{product.validateEditProduct(displayProd.pid)}"
+				value="Edit"></h:commandButton>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Delete</f:facet>
+			<h:commandButton action="#{product.validateDeleteProduct(displayProd.pid)}"
+				value="Delete"></h:commandButton>
+			
+		</h:column>
+	</h:dataTable>
+	</h:form>
+	<br />
+	<br />
+</h:body>
+</html>
